@@ -1,52 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="hm.proylocate" >
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="hm.ProyLocate">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <!--
- The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but are recommended.
-    -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+    <application android:allowBackup="true" android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher" android:theme="@style/AppTheme">
+        <!-- Activity with SearchDialog enabled -->
         <activity
-            android:name=".MainActivity"
+            android:name="hm.ProyLocate.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
+            <!-- Enabling Search Dialog -->
+            <meta-data android:name="android.app.default_searchable"
+                android:value="hm.ProyLocate.SearchableActivity" />
         </activity>
 
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="@string/google_maps_key" />
+        <!-- A Searchable activity, that handles the searches -->
+        <activity android:name="hm.ProyLocate.SearchableActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" >
-        </activity>
-        <activity
-            android:name=".ViewListaActivity"
-            android:label="@string/title_activity_view_lista" >
-        </activity>
+        <!-- Activity that shows the country details -->
+        <activity android:name="hm.ProyLocate.ProdActivity" />
+
+        <!-- Content Provider to query sqlite database -->
+        <provider
+            android:name="hm.ProyLocate.ProdContentProvider"
+            android:authorities="hm.ProyLocate.ProdContentProvider"
+            android:exported="true" />
     </application>
 
 </manifest>
