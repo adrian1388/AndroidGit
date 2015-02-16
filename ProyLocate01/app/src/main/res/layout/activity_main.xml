@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="50.5dp"
+        android:layout_height="50.5dp"
+        android:background="@drawable/abc_ic_search_api_mtrl_alpha"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        android:backgroundTintMode="src_over" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Búsqueda de productos"
+        android:id="@+id/btn_search1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Historial"
+        android:id="@+id/btn_Hist"
+        android:layout_below="@+id/btn_search1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cambiar de Supermercado"
+        android:id="@+id/btn_ChgSuper"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/btn_search"
+        android:layout_alignEnd="@+id/btn_search" />
+
+</RelativeLayout>
