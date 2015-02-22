@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 
 /**
  * Created by USUARIO-WIN on 01/02/2015.
@@ -21,6 +22,7 @@ public class MainActivity extends FragmentActivity{
         Button btn_search1 = (Button) findViewById(R.id.btn_search1);
         Button btn_hist = (Button) findViewById(R.id.btn_Hist);
         Button btn_chgSuper = (Button) findViewById(R.id.btn_ChgSuper);
+        ImageView btnImg = (ImageView) findViewById(R.id.imageLogo);
 
         btn.setOnClickListener(new OnClickListener() {
 
@@ -31,6 +33,12 @@ public class MainActivity extends FragmentActivity{
         });
 
         btn_search1.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btn.callOnClick();
+            }
+        });
+        btnImg.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 btn.callOnClick();

@@ -129,11 +129,11 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                     break;
 
                 }
-//                else if(distancia > 10){
-//                    Intent mainAct = new Intent(getApplicationContext(), MainActivity.class);
-//                    startActivity(mainAct);
-//                    break;
-//                }
+                else if(distancia > 10){
+                    Intent mainAct = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(mainAct);
+                    break;
+                }
                 else if(distancia <= 10) {//solo muestro los que estan a menos de 10km
                     mMap.addMarker(new MarkerOptions().position(new LatLng(latitud, longitud))
                                     .title(nombre)

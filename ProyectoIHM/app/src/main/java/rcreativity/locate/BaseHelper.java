@@ -137,8 +137,15 @@ class BaseHelper extends SQLiteOpenHelper {
 
     public Cursor cargarCursorSuperMercados()
     {
-        String[] columnas = new String[]{SuperDB.CN_ID,SuperDB.CN_NAME,SuperDB.CN_LATITUD,SuperDB.CN_LONGITUD};
-        return  getReadableDatabase().query(SuperDB.TABLE_NAME, columnas, null, null, null, null, null);
+        Cursor c = getReadableDatabase().rawQuery("SELECT "
+                + SuperDB.CN_ID + " AS _id, "
+                + SuperDB.CN_NAME + " AS nameSuper, "
+                + SuperDB.CN_LATITUD + " AS latitud, "
+                + SuperDB.CN_LONGITUD + " AS longitud "
+                + " FROM " + SuperDB.TABLE_NAME,null);
+        return c;
+//        String[] columnas = new String[]{SuperDB.CN_ID,SuperDB.CN_NAME,SuperDB.CN_LATITUD,SuperDB.CN_LONGITUD};
+//        return  getReadableDatabase().query(SuperDB.TABLE_NAME, columnas, null, null, null, null, null);
     }
 
 //    public Cursor cargarCursorSuperMercados()
