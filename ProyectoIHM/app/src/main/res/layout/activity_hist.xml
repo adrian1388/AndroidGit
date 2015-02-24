@@ -1,34 +1,42 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="hm.ProyLocate.HistActivity"
-    android:background="@android:color/holo_blue_light"
+    tools:context=".HistActivity"
+    android:background="#fffcfff6"
     android:padding="10dp">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buscar Otro Producto"
+        android:text="Producto"
         android:id="@+id/btn_main2"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@android:color/holo_green_light"
+        android:background="#ff1ca5ff"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+		android:typeface="monospace"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#ff09ff06" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/titleHist"
+        android:text="MIS PRODUCTOS"
         android:id="@+id/textView2"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textStyle="bold"
         android:fontFamily="@android:string/copyUrl"
-        android:background="@android:color/holo_green_light" />
+        android:background="#ff1ca5ff"
+        android:typeface="monospace"
+		android:singleLine="false"
+        android:textSize="20sp"
+        android:textColor="#ff09ff06" />
 
     <ListView
         android:layout_width="wrap_content"
@@ -37,8 +45,10 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/textView2"
+        android:background="#fff0f1eb"
         android:layout_above="@+id/btn_main2"
-        android:background="@android:color/transparent" />
+        android:focusable="false"
+        android:visibility="visible" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -48,7 +58,11 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="@android:color/holo_green_light"
-        android:checked="false" />
+        android:background="#ff1ca5ff"
+        android:typeface="monospace"
+        android:checked="false"
+        android:textColor="#ff09ff06"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

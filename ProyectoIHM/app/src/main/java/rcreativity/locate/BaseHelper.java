@@ -1,3 +1,14 @@
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++/
+ *
+ * Héctor Mosquera
+ *
+ * Giannina Cicenia
+ *											rCreativity
+ * Alvaro Atariguana
+ *
+ * David Vinces
+ *
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 package rcreativity.locate;
 
 import android.content.ContentValues;

@@ -1,3 +1,14 @@
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++/
+ *
+ * Héctor Mosquera
+ *
+ * Giannina Cicenia
+ *											rCreativity
+ * Alvaro Atariguana
+ *
+ * David Vinces
+ *
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 package rcreativity.locate;
 
 import android.app.SearchManager;
@@ -12,7 +23,7 @@ import android.net.Uri;
  */
 public class ProdContentProvider extends ContentProvider {
 
-    public static final String AUTHORITY = "hm.ProyLocate.ProdContentProvider";
+    public static final String AUTHORITY = "rcreativity.locate.ProdContentProvider";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/productos" );
 
     SuperDB mSuperDB = null;

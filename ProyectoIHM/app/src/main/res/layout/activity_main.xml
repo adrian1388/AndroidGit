@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@android:color/holo_blue_light"
+    android:background="#fff7f5ff"
     android:padding="10dp">
 
     <Button
@@ -22,42 +22,78 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Búsqueda de productos"
+        android:text="Producto"
         android:id="@+id/btn_search1"
-        android:background="@android:color/holo_green_light"
-        android:layout_above="@+id/btn_ChgSuper"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="150dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Historial"
-        android:id="@+id/btn_Hist"
-        android:background="@android:color/holo_green_light"
-        android:layout_marginBottom="61dp"
-        android:layout_above="@+id/btn_ChgSuper"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cambiar de Supermercado"
-        android:id="@+id/btn_ChgSuper"
-        android:layout_alignParentBottom="true"
+        android:background="#ff1ca5ff"
+        android:layout_marginBottom="53dp"
+        android:textColor="#ff09ff06"
+        android:textSize="20sp"
+        android:shadowColor="#fff9fbf7"
+        android:shadowRadius="1.5"
+        android:typeface="monospace"
+        android:clickable="true"
+        android:lines="@integer/abc_max_action_buttons"
+        android:textStyle="bold"
+        android:singleLine="true"
+        android:layout_alignBottom="@+id/btn_Hist"
+        android:layout_alignRight="@+id/btn_Hist"
+        android:layout_alignEnd="@+id/btn_Hist"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/btn_search"
-        android:layout_alignEnd="@+id/btn_search"
-        android:background="@android:color/holo_green_light" />
+        android:layout_marginLeft="@android:dimen/app_icon_size"
+        style="@android:style/Animation" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MIS PRODUCTOS"
+        android:id="@+id/btn_Hist"
+        android:background="#ff1ca5ff"
+        android:textColor="#ff09ff06"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:typeface="monospace"
+        android:shadowColor="#fff9fbf7"
+        android:shadowRadius="1.5"
+        android:singleLine="true"
+        android:layout_above="@+id/btn_ChgSuper"
+        android:layout_toLeftOf="@+id/btn_search"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="@android:dimen/app_icon_size" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Supermercado"
+        android:id="@+id/btn_ChgSuper"
+        android:layout_alignParentBottom="true"
+        android:background="#ff1ca5ff"
+        android:textColor="#ff09ff06"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:typeface="monospace"
+        android:shadowColor="#fff9fbf7"
+        android:shadowRadius="1.5"
+        android:singleLine="true"
+        android:layout_marginTop="@android:dimen/app_icon_size"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="@android:dimen/app_icon_size" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageLogo"
         android:src="@drawable/iconolocate2"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/btn_search"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_above="@+id/btn_search1" />
 
 </RelativeLayout>
