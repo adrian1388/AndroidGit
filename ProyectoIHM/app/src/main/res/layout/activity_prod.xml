@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_light"
+    android:background="#ffffffff"
     android:padding="10dp">
 
     <TextView
@@ -26,13 +26,17 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buscar Otro Producto"
         android:id="@+id/btn_main"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="@android:color/holo_green_light" />
+        android:background="#ff1ca5ff"
+        android:textColor="#ff09ff06"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        android:text="Producto"
+        android:textSize="20sp" />
 
     <ImageView
         android:layout_width="fill_parent"
@@ -44,15 +48,19 @@
         android:background="@android:color/transparent" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/prodHist"
+        android:text="MIS PRODUCTOS"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textStyle="bold"
-        android:background="@android:color/holo_green_light" />
+        android:background="#ff1ca5ff"
+        android:textColor="#ff09ff06"
+        android:typeface="monospace"
+        android:editable="false"
+        android:textIsSelectable="false" />
 
 </RelativeLayout>

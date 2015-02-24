@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--/*+++++++++++++++++++++++++++++++++++++++++++++++++++++/
+*
+* Héctor Mosquera
+*
+* Giannina Cicenia
+*											rCreativity
+* Alvaro Atariguana
+*
+* David Vinces
+*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="rcreativity.locate" >
 
@@ -40,7 +51,6 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
-
             <meta-data
                 android:name="android.app.default_searchable"
                 android:value="rcreativity.locate.SearchableActivity" />
