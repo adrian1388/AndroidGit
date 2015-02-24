@@ -1,14 +1,3 @@
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++/
- *
- * Héctor Mosquera
- *
- * Giannina Cicenia
- *											rCreativity
- * Alvaro Atariguana
- *
- * David Vinces
- *
- ++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 package rcreativity.locate;
 
 import android.app.Activity;
@@ -91,9 +80,9 @@ public class HistActivity extends Activity {
                 mTvProdName = (TextView) v.findViewById(android.R.id.text1);
                 mTvFecha = (TextView) v.findViewById(android.R.id.text2);
 
-                String prodName =  mTvProdName.getText().toString();
-                String ubicacion = mTvFecha.getText().toString();
-                Cursor cCroquisProd = db.getCroquisProd(prodName);
+                CharSequence prodName =  mTvProdName.getText();
+                CharSequence ubicacion =  mTvFecha.getText();
+                Cursor cCroquisProd = db.getCroquisProd((String)prodName);
 
                 mTvProdName = (TextView) findViewById(R.id.tv_nombreProd);
                 mTvFecha = (TextView) findViewById(R.id.tv_ubicacion);
@@ -156,6 +145,8 @@ public class HistActivity extends Activity {
             java.util.Date utilDate = new java.util.GregorianCalendar(year, month, day).getTime();
             fecha = new Date(utilDate.getTime());
             Toast.makeText(getApplicationContext(), "" + fecha + "" , Toast.LENGTH_SHORT).show();
+            // set selected date into datepicker also
+            //dpResult.init(year, month, day, null);
 
             Relleno(fecha);
 

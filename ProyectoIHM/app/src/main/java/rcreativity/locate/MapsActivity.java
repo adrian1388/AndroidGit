@@ -1,14 +1,3 @@
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++/
- *
- * Héctor Mosquera
- *
- * Giannina Cicenia
- *											rCreativity
- * Alvaro Atariguana
- *
- * David Vinces
- *
- ++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 package rcreativity.locate;
 
 import android.app.Dialog;
@@ -29,7 +18,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements LocationListener {
@@ -37,7 +25,6 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private Location location;
     private Cursor cursor;
-    private Marker mySelectedMarker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,14 +93,6 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
     protected void onResume() {
         super.onResume();
         setUpMapIfNeeded();
-        if (location==null){
-            Intent mainAct = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(mainAct);
-            finish();
-        }
-        else {
-
-        }
     }
 
 
@@ -156,21 +135,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                     break;
                 }
                 else if(distancia <= 10) {//solo muestro los que estan a menos de 10km
-
-                    mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-                        @Override
-                        public boolean onMarkerClick(Marker marker) {
-                            if (marker.equals(mySelectedMarker))
-                            {
-                                Intent mainAct = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(mainAct);
-                                finish();
-                            }
-                            return false;
-                        }
-                    });
-
-                    mySelectedMarker = mMap.addMarker(new MarkerOptions().position(new LatLng(latitud, longitud))
+                    mMap.addMarker(new MarkerOptions().position(new LatLng(latitud, longitud))
                                     .title(nombre)
                                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))
                     );

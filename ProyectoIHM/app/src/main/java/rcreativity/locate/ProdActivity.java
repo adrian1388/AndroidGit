@@ -1,14 +1,3 @@
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++/
- *
- * Héctor Mosquera
- *
- * Giannina Cicenia
- *											rCreativity
- * Alvaro Atariguana
- *
- * David Vinces
- *
- ++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 package rcreativity.locate;
 
 import android.content.Context;
@@ -44,27 +33,21 @@ import android.graphics.PointF;
 import android.os.Bundle;
 import android.util.FloatMath;
 import android.view.MotionEvent;
-import android.widget.Toast;
 
 /**
  * Created by USUARIO-WIN on 01/02/2015.
  */
 public class ProdActivity extends FragmentActivity implements LoaderCallbacks<Cursor>{
 
-//    static final double LONGITUD_MIN = -79.88952041990588;    //alsa
+//    static final double LONGITUD_MIN = -79.88952041990588;
 //    static final double LONGITUD_MAX = -79.88890887625048;
 //    static final double LATITUD_MIN = -2.2269273699942698;
 //    static final double LATITUD_MAX = -2.2266137885128807;
 
-    static final double LONGITUD_MIN =-79.59414875129283;     //misa
-    static final double LONGITUD_MAX =-79.59382152179302;
-    static final double LATITUD_MIN = -2.1205456450053832;
-    static final double LATITUD_MAX = -2.1202025573244674;
-
-//    static final double LATITUD_MIN  = -2.1449066116642936;     //ESPOL
-//    static final double LONGITUD_MIN = -79.9679602908726;
-//    static final double LATITUD_MAX  = -2.144241889736975;
-//    static final double LONGITUD_MAX = -79.96730851408198;
+    static final double LONGITUD_MIN =-79.59446927527011;
+    static final double LONGITUD_MAX =-79.59301551798404;
+    static final double LATITUD_MIN = -2.1205536861219847;
+    static final double LATITUD_MAX = -2.119964004126508;
 
     private double posLong = 0;
     private double posLat = 0;
@@ -112,9 +95,9 @@ public class ProdActivity extends FragmentActivity implements LoaderCallbacks<Cu
         MyLocationListener mlocListener = new MyLocationListener();
         mlocListener.setMainActivity(this);
         mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,(LocationListener)mlocListener);
-
-        posLong = mlocManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER).getLongitude();
-        posLat = mlocManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER).getLatitude();
+//
+//        posLong = mlocManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER).getLongitude();
+//        posLat = mlocManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER).getLatitude();
 
         btn_main.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,13 +130,8 @@ public class ProdActivity extends FragmentActivity implements LoaderCallbacks<Cu
             mTvProdName.setText(cursor.getString(cursor.getColumnIndex(cursor.getColumnName(1)))+": ");
             mTvUbicacion.setText(cursor.getString(cursor.getColumnIndex(cursor.getColumnName(2))));
             mIvCroquis.setImageResource(cursor.getInt(cursor.getColumnIndex(cursor.getColumnName(3))));//mIvCroquis.setImageResource(R.drawable.a2);
-            PintarLocalizacion();
+
             ZoomingCroquis(mIvCroquis);
-            Toast toast = Toast.makeText(getApplicationContext(), "Tu ubicación es el puto rojo", Toast.LENGTH_SHORT);
-            TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
-            v.setTextColor(Color.RED);
-            toast.show();
-            //Toast.makeText(getApplicationContext(), "Tu ubicación es el puto rojo", Toast.LENGTH_SHORT).show();
             db.insertarHist(Integer.parseInt(cursor.getString(cursor.getColumnIndex(cursor.getColumnName(0)))),
                             sqlDate);
         }
@@ -243,14 +221,25 @@ public class ProdActivity extends FragmentActivity implements LoaderCallbacks<Cu
         x = (-1)*(int) (width * m);
         n = (posLat - LATITUD_MAX) / (LATITUD_MAX - LATITUD_MIN);
         y = (-1)*(int) (height * n);
-        int delta=20;
+        int delta=10;
         for (int j = y; j < y+delta; j++)
             for (int i = x; i < x+delta; i++) {
                 int posicionEnBitMap = j * width + i;
+//
+//                int r = (pix[posicionEnBitMap] >> 16) & 0xff;
+//                int g = (pix[posicionEnBitMap] >> 8) & 0xff;
+//                int b = pix[posicionEnBitMap] & 0xff;
+//                int R = (int) (0.8 * r + 0.1 * g + 0.1 * b);
+//                pix[posicionEnBitMap] = 0xff000000 | (R << 16) | (R << 8) | R;
+                //int colour = mBitmap.getPixel(i, j);
 
                 pix[posicionEnBitMap] = Color.RED;
+//                int blue = Color.blue(colour);
+//                int green = Color.green(colour);
+//                int alpha = Color.alpha(colour);
 
             }
+        //mBitmap.setPixels(pix, 0, width, 0, 0, width, height);
         return pix;
     }
     @Override
@@ -275,7 +264,7 @@ public class ProdActivity extends FragmentActivity implements LoaderCallbacks<Cu
             location.getLongitude();
             posLat = location.getLatitude();
             posLong = location.getLongitude();
-            //PintarLocalizacion();
+            PintarLocalizacion();
         }
 
         @Override

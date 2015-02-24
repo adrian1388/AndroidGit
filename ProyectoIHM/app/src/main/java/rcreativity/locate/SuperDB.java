@@ -1,14 +1,3 @@
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++/
- *
- * Héctor Mosquera
- *
- * Giannina Cicenia
- *											rCreativity
- * Alvaro Atariguana
- *
- * David Vinces
- *
- ++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 package rcreativity.locate;
 
 

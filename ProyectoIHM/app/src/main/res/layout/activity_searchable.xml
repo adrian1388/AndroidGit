@@ -8,6 +8,6 @@
         android:id="@+id/productos"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#fff0f1eb" />
+        android:background="@android:color/holo_blue_light" />
 
 </LinearLayout>

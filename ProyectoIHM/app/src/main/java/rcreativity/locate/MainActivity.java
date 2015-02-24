@@ -1,14 +1,3 @@
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++/
- *
- * Héctor Mosquera
- *
- * Giannina Cicenia
- *											rCreativity
- * Alvaro Atariguana
- *
- * David Vinces
- *
- ++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 package rcreativity.locate;
 
 import android.content.Intent;
@@ -69,7 +58,6 @@ public class MainActivity extends FragmentActivity{
             public void onClick(View v) {
                 Intent mapAct = new Intent(getApplicationContext(), MapsActivity.class);
                 startActivity(mapAct);
-                finish();
             }
         });
 
