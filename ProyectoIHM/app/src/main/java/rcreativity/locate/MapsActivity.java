@@ -98,10 +98,6 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
 
     }
 
-
-
-
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -150,27 +146,15 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                     break;
 
                 }
-                else if(distancia > 10){
-                    Intent mainAct = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(mainAct);
-                    break;
-                }
+//                else if(distancia > 10){
+//                    Intent mainAct = new Intent(getApplicationContext(), MainActivity.class);
+//                    startActivity(mainAct);
+//                    break;
+//                }
                 else if(distancia <= 10) {//solo muestro los que estan a menos de 10km
 
-                    mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-                        @Override
-                        public boolean onMarkerClick(Marker marker) {
-                            if (marker.equals(mySelectedMarker))
-                            {
-                                Intent mainAct = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(mainAct);
-                                finish();
-                            }
-                            return false;
-                        }
-                    });
 
-                    mySelectedMarker = mMap.addMarker(new MarkerOptions().position(new LatLng(latitud, longitud))
+                    mMap.addMarker(new MarkerOptions().position(new LatLng(latitud, longitud))
                                     .title(nombre)
                                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))
                     );
@@ -179,6 +163,22 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                 // mMap.addMarker(new MarkerOptions().position(new LatLng(location.getLatitude() + (i / 100), location.getLongitude() + (i / 100))).title(""));
             }while(cursor.moveToNext());
             Toast.makeText(getApplicationContext(), "¡Bienvenido!\nEstos son los Supermercados cercanos a ti.", Toast.LENGTH_LONG).show();
+
+            mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                @Override
+                public boolean onMarkerClick(Marker marker) {
+                    if (marker.equals(mySelectedMarker))
+                    {
+                        Intent mainAct = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(mainAct);
+                        finish();
+                    }
+                    return false;
+                }
+            });
+            mySelectedMarker = mMap.addMarker(new MarkerOptions().position(new LatLng(location.getLatitude(),location.getLongitude()))
+                    .title("Mi Ubicacion")
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         }
     }
 

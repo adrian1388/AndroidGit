@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="MIS PRODUCTOS"
+        android:text="PRODUCTOS"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -60,7 +60,7 @@
         android:background="#ff1ca5ff"
         android:textColor="#ff09ff06"
         android:typeface="monospace"
-        android:editable="false"
-        android:textIsSelectable="false" />
+        android:textSize="20sp"
+        android:editable="false" />
 
 </RelativeLayout>

@@ -46,7 +46,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MIS PRODUCTOS"
+        android:text="Mis Productos"
         android:id="@+id/btn_Hist"
         android:background="#ff1ca5ff"
         android:textColor="#ff09ff06"
@@ -65,7 +65,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Supermercado"
+        android:text="Supermercados"
         android:id="@+id/btn_ChgSuper"
         android:layout_alignParentBottom="true"
         android:background="#ff1ca5ff"
